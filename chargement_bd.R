@@ -9,10 +9,15 @@ library(gridExtra )
 library(plotly)
 #charger les bases des données :
 db_1=read.csv2('./data/residentiel/PC_DP_créant_logements_2013_2016.csv',sep=';')
+
 db_2=read.csv2("./data/residentiel/PC_DP_créant_logements_2017_2021.csv",sep=';')
+
 Data=rbind(db_1,db_2)
+write.csv2(Data,here::here("./data/residentiel","PC_DP_créant_logements_2013_2021.csv"),row.names = FALSE )
 DataNor=subset(Data,REG=="25")
+write.csv2(Data,here::here("./data/residentiel","PC_DP_créant_logements_2013_2021_Dep25.csv"),row.names = FALSE )
 DataPC=subset(DataNor,Type_DAU=="PC")
+write.csv2(Data,here::here("./data/residentiel","PC_DP_créant_logements_2013_2021_Dep25_pc.csv"),row.names = FALSE )
 
 
 DataBase=select(DataPC,REG,DEP,Type_DAU,Etat_DAU,DATE_REELLE_AUTORISATION,CAT_DEM,NATURE_PROJET,UTILISATION,RES_PRINCIP_OU_SECOND,NB_LGT_TOT_CREES)
