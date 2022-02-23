@@ -17,8 +17,8 @@ DataPC=select(DataPC,Etat_DAU,
               REC_ARCHI,ADR_CODPOST_TER,
               NATURE_PROJET, UTILISATION,RES_PRINCIP_OU_SECOND, TYP_ANNEXE,RESIDENCE_SERVICE)
 
-DataPC=subset(DataPC,Etat_DAU=='2')
-
+DataPC2=subset(DataPC,Etat_DAU=='2')
+DataPC1=subset(DataPC,Etat_DAU=='4')
 
 
 
@@ -44,6 +44,22 @@ fig <- DataPC %>%
       start = "2012-12-31"
     )
   )
+
+fig <- fig %>% add_trace(
+    x = ~DATE_REELLE_AUTORISATION,
+    autobinx = FALSE, 
+    autobiny = TRUE, 
+    marker = list(color = "rgb(255, 0, 0)"), 
+    name = "date", 
+    type = "histogram", 
+    xbins = list(
+      end =  "2021-12-31", 
+      size = "D1", 
+      start = "2012-12-31"
+    )
+  )
+
+
 fig <- fig %>% layout(
   paper_bgcolor = "rgb(240, 240, 240)", 
   plot_bgcolor = "rgb(240, 240, 240)", 

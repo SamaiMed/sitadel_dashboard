@@ -10,7 +10,7 @@ library(plotly)
 
 #load Data
 DataPC=read.csv2("./data/residentiel/PC_DP_créant_logements_2013_2021_Dep25_pc.csv", sep=';')
-#
+#filtrer base de donnee
 DataPC=select(DataPC,Etat_DAU,
                DATE_REELLE_AUTORISATION,
                CAT_DEM,
@@ -26,12 +26,12 @@ DataPC$moisAnnee=as.Date(ISOdate(year=DataPC$year,month=DataPC$mois , day="1")) 
 #DataPC=subset(DataPC,Etat_DAU=='2')#PC autorisé
 
 DataPCAnnee <- DataPC %>%
-  group_by(moisAnnee,Etat_DAU) %>%
+  group_by(year,Etat_DAU) %>%
   dplyr::summarise(counts=length(Etat_DAU))  
 
 DataPCAnnee$Etat_DAU=as.character(DataPCAnnee$Etat_DAU)
 
-fig <- plot_ly(DataPCAnnee, x = ~moisAnnee, y = ~counts, type = 'bar',color=~Etat_DAU)
+fig <- plot_ly(DataPCAnnee, x = ~year, y = ~counts, type = 'bar',color=~Etat_DAU)
 
 fig <- fig %>% layout(yaxis = list(title = 'Count'), barmode = 'group')
 
