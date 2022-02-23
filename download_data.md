@@ -1,2 +1,18 @@
 # download with https://drive.google.com/file/d/1wn0iMbBSrIZT1frgFW288eDKCvX9RRdL/view?usp=sharing
 # then unzip  
+# 'SURF_HAB_AVANT', 'SURF_HAB_CREEE', 'SURF_HAB_ISSUE_TRANSFO',
+#        'SURF_HAB_DEMOLIE', 'SURF_HAB_TRANSFORMEE', 'SURF_LOC_AVANT',
+#        'SURF_LOC_CREEE', 'SURF_LOC_ISSUE_TRANSFO', 'SURF_LOC_DEMOLIE',
+#        'SURF_LOC_TRANSFORMEE'
+
+# 'NB_LGT_TOT_CREES', 'NB_LGT_IND_CREES',
+#        'NB_LGT_COL_CREES', 'NB_LGT_DEMOLIS', 'NB_LGT_1P', 'NB_LGT_2P',
+#        'NB_LGT_3P', 'NB_LGT_4P', 'NB_LGT_5P', 'NB_LGT_6P_PLUS',
+#        'NB_LGT_PRET_LOC_SOCIAL', 'NB_LGT_ACC_SOC_HORS_PTZ', 'NB_LGT_PTZ'
+
+# 'Type_DAU', 'Num_DAU',
+data_col = ['Etat_DAU',
+           'DATE_REELLE_AUTORISATION',
+           'CAT_DEM',
+           'REC_ARCHI', 'ADR_CODPOST_TER',
+           'NATURE_PROJET', 'UTILISATION', 'RES_PRINCIP_OU_SECOND', 'TYP_ANNEXE','RESIDENCE_SERVICE']
